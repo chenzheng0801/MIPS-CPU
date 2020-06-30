@@ -1,0 +1,127 @@
+D:/MIPS_CPU/define.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/define.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+
+} {} {}} D:/MIPS_CPU/inst_rom.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/inst_rom.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module inst_rom
+
+Top level modules:
+	inst_rom
+
+} {} {}} D:/MIPS_CPU/mem_wb.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/mem_wb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mem_wb
+
+Top level modules:
+	mem_wb
+
+} {} {}} D:/MIPS_CPU/pc_reg.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/pc_reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc_reg
+
+Top level modules:
+	pc_reg
+
+} {} {}} D:/MIPS_CPU/id_ex.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/id_ex.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module id_ex
+
+Top level modules:
+	id_ex
+
+} {} {}} D:/MIPS_CPU/openmips.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/openmips.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc_reg
+-- Compiling module if_id
+-- Compiling module id
+-- Compiling module regfile
+-- Compiling module id_ex
+-- Compiling module ex
+-- Compiling module ex_mem
+-- Compiling module mem
+-- Compiling module mem_wb
+-- Compiling module openmips
+
+Top level modules:
+	openmips
+
+} {} {}} D:/MIPS_CPU/ex_mem.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/ex_mem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ex_mem
+
+Top level modules:
+	ex_mem
+
+} {} {}} D:/MIPS_CPU/if_id.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/if_id.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module if_id
+
+Top level modules:
+	if_id
+
+} {} {}} D:/MIPS_CPU/openmips_soc_tb.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/openmips_soc_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc_reg
+-- Compiling module if_id
+-- Compiling module id
+-- Compiling module regfile
+-- Compiling module id_ex
+-- Compiling module ex
+-- Compiling module ex_mem
+-- Compiling module mem
+-- Compiling module mem_wb
+-- Compiling module openmips
+-- Compiling module inst_rom
+-- Compiling module openmips_soc
+-- Compiling module openmips_soc_tb
+
+Top level modules:
+	openmips_soc_tb
+
+} {} {}} D:/MIPS_CPU/id.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/id.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module id
+
+Top level modules:
+	id
+
+} {} {}} D:/MIPS_CPU/ex.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/ex.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ex
+
+Top level modules:
+	ex
+
+} {} {}} D:/MIPS_CPU/regfile.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/regfile.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}} D:/MIPS_CPU/openmips_soc.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/openmips_soc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc_reg
+-- Compiling module if_id
+-- Compiling module id
+-- Compiling module regfile
+-- Compiling module id_ex
+-- Compiling module ex
+-- Compiling module ex_mem
+-- Compiling module mem
+-- Compiling module mem_wb
+-- Compiling module openmips
+-- Compiling module inst_rom
+-- Compiling module openmips_soc
+
+Top level modules:
+	openmips_soc
+
+} {} {}} D:/MIPS_CPU/mem.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/mem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mem
+
+Top level modules:
+	mem
+
+} {} {}}
