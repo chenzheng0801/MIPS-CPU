@@ -52,10 +52,13 @@ module id(
 	wire [`OpcodeBus] op_code	=  inst_id[`OpcodeIndex];
 	wire [4:0]		  op1_code	=  inst_id[10:6];
 	wire [4:0]		  op2_code  =  inst_id[20:16];
+	wire [4:0]		  op3_code  =  inst_id[25:21];
+	wire [`FunCodeBus]fun_code	=  inst_id[`FunCodeIndex];
 
 	//regfile 
 	wire [`RegAddrBus]	inst_reg1_addr = inst_id[`Reg1Index];
 	wire [`RegAddrBus]	inst_reg2_addr = inst_id[`Reg2Index];
+	wire [`RegAddrBus]	inst_reg3_addr = inst_id[`Reg3Index];
 	
 	reg instvalid;
 	reg	[`RegBus]	imm;	//立即数
@@ -73,7 +76,7 @@ module id(
 			reg2_addr = `NOPRegAddr;
 			wr_addr_o = `NOPRegAddr;
 			reg_we_o = `WriteDisable;
-			instvalid = `InstInValid;				
+			instvalid = `InstValid;				
 			imm = `ZeroWord;			
 		end
 		else begin
@@ -81,22 +84,196 @@ module id(
 			alusel_o = `EXE_RES_NOP;
 			reg1_re = `ReadDisable;
 			reg2_re = `ReadDisable;
-			reg1_addr =	inst_reg1_addr;
-			reg2_addr = inst_reg2_addr;
-			wr_addr_o = inst_reg2_addr;
+			reg1_addr =	`NOPRegAddr;
+			reg2_addr = `NOPRegAddr;
+			wr_addr_o = `NOPRegAddr;
 			reg_we_o = `WriteDisable;
 			instvalid = `InstInValid;					
 			imm = `ZeroWord;
 			case(op_code)
 				`OPCODE_SPECIAL: begin
-					case(op1_code): begin
-					end
+					case (op1_code)
+						5'b00000:begin
+							case (fun_code)
+								`FUNCODE_NOR:begin
+									alusel_o = `EXE_RES_LOGIC;
+									aluop_o = `EXE_NOR_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_AND:begin
+									alusel_o = `EXE_RES_LOGIC;
+									aluop_o = `EXE_AND_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_OR:begin
+									alusel_o = `EXE_RES_LOGIC;
+									aluop_o = `EXE_OR_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_XOR:begin
+									alusel_o = `EXE_RES_LOGIC;
+									aluop_o = `EXE_XOR_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_SLLV:begin
+									alusel_o = `EXE_RES_SHIFT;
+									aluop_o = `EXE_SLL_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_SRAV:begin
+									alusel_o = `EXE_RES_SHIFT;
+									aluop_o = `EXE_SRA_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_SRLV:begin
+									alusel_o = `EXE_RES_SHIFT;
+									aluop_o = `EXE_SRL_OP;
+									reg1_re = `ReadEnable;
+									reg1_addr =	inst_reg1_addr;
+									reg2_re = `ReadEnable;
+									reg2_addr = inst_reg2_addr;
+									wr_addr_o = inst_reg3_addr;
+									reg_we_o = `WriteEnable;
+									instvalid = `InstValid;
+								end
+								`FUNCODE_SYNC:begin
+									aluop_o = `EXE_NOP_OP;
+									alusel_o = `EXE_RES_NOP;
+									reg1_re = `ReadDisable;
+									reg2_re = `ReadDisable;
+									reg1_addr =	`NOPRegAddr;
+									reg2_addr = `NOPRegAddr;
+									wr_addr_o = `NOPRegAddr;
+									reg_we_o = `WriteDisable;
+									instvalid = `InstValid;				
+									imm = `ZeroWord;
+								end
+								default: begin
+								end
+							endcase
+						end
+					endcase
 
+					if(op3_code == 5'b00000)
+					begin
+						case (fun_code)
+							`FUNCODE_SLL:begin
+								alusel_o = `EXE_RES_SHIFT;
+								aluop_o = `EXE_SLL_OP;
+								reg1_re = `ReadDisable;
+								reg1_addr =	`NOPRegAddr;
+								reg2_re = `ReadEnable;
+								reg2_addr = inst_reg2_addr;
+								wr_addr_o = inst_reg3_addr;
+								reg_we_o = `WriteEnable;
+								instvalid = `InstValid;
+								imm[4:0] = inst_id[10:6];
+							end
+							`FUNCODE_SRA:begin
+								alusel_o = `EXE_RES_SHIFT;
+								aluop_o = `EXE_SRA_OP;
+								reg1_re = `ReadDisable;
+								reg1_addr =	`NOPRegAddr;
+								reg2_re = `ReadEnable;
+								reg2_addr = inst_reg2_addr;
+								wr_addr_o = inst_reg3_addr;
+								reg_we_o = `WriteEnable;
+								instvalid = `InstValid;
+								imm[4:0] = inst_id[10:6];
+							end
+							`FUNCODE_SRL:begin
+								alusel_o = `EXE_RES_SHIFT;
+								aluop_o = `EXE_SRL_OP;
+								reg1_re = `ReadDisable;
+								reg1_addr =	`NOPRegAddr;
+								reg2_re = `ReadEnable;
+								reg2_addr = inst_reg2_addr;
+								wr_addr_o = inst_reg3_addr;
+								reg_we_o = `WriteEnable;
+								instvalid = `InstValid;
+								imm[4:0] = inst_id[10:6];				  
+							end
+							default: begin
+							end
+						endcase
+					end
+				end
+				`OPCODE_LUI: begin
+					aluop_o = `EXE_OR_OP;
+					alusel_o = `EXE_RES_LOGIC;
+					reg1_re = `ReadEnable;
+					reg2_re = `ReadDisable;
+					reg1_addr =	inst_reg1_addr;
+					reg2_addr = inst_reg2_addr;
+					wr_addr_o = inst_reg2_addr;		//注意指令中第二个位置就是写回的指令地址
+					reg_we_o = `WriteEnable;
+					instvalid = `InstValid;
+					imm = {inst_id[`ImmIndex], `HalfZeroWord};
+				end
+				`OPCODE_ANDI: begin
+					aluop_o = `EXE_AND_OP;
+					alusel_o = `EXE_RES_LOGIC;
+					reg1_re = `ReadEnable;
+					reg2_re = `ReadDisable;
+					reg1_addr =	inst_reg1_addr;
+					reg2_addr = inst_reg2_addr;
+					wr_addr_o = inst_reg2_addr;		//注意指令中第二个位置就是写回的指令地址
+					reg_we_o = `WriteEnable;
+					instvalid = `InstValid;
+					imm = {`HalfZeroWord, inst_id[`ImmIndex]};
+				end
+				`OPCODE_XORI: begin
+					aluop_o = `EXE_XOR_OP;
+					alusel_o = `EXE_RES_LOGIC;
+					reg1_re = `ReadEnable;
+					reg2_re = `ReadDisable;
+					reg1_addr =	inst_reg1_addr;
+					reg2_addr = inst_reg2_addr;
+					wr_addr_o = inst_reg2_addr;		//注意指令中第二个位置就是写回的指令地址
+					reg_we_o = `WriteEnable;
+					instvalid = `InstValid;
+					imm = {`HalfZeroWord, inst_id[`ImmIndex]};
 				end
 				`OPCODE_ORI: begin
 					aluop_o = `EXE_OR_OP;
 					alusel_o = `EXE_RES_LOGIC;
-					reg1_re = `ReadEnable;
+					reg1_re = `ReadDisable;
 					reg2_re = `ReadDisable;
 					reg1_addr =	inst_reg1_addr;
 					reg2_addr = inst_reg2_addr;
@@ -105,18 +282,19 @@ module id(
 					instvalid = `InstValid;
 					imm = {`HalfZeroWord, inst_id[`ImmIndex]};
 				end
-				default
-				begin
+				`OPCODE_PREF: begin
 					aluop_o = `EXE_NOP_OP;
 					alusel_o = `EXE_RES_NOP;
 					reg1_re = `ReadDisable;
 					reg2_re = `ReadDisable;
-					reg1_addr =	inst_reg1_addr;
-					reg2_addr = inst_reg2_addr;
-					wr_addr_o = inst_reg2_addr;
+					reg1_addr =	`NOPRegAddr;
+					reg2_addr = `NOPRegAddr;
+					wr_addr_o = `NOPRegAddr;
 					reg_we_o = `WriteDisable;
-					instvalid = `InstInValid;					
+					instvalid = `InstValid;				
 					imm = `ZeroWord;
+				end				
+				default begin
 				end
 			endcase
 		end		
