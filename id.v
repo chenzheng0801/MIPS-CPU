@@ -273,7 +273,7 @@ module id(
 				`OPCODE_ORI: begin
 					aluop_o = `EXE_OR_OP;
 					alusel_o = `EXE_RES_LOGIC;
-					reg1_re = `ReadDisable;
+					reg1_re = `ReadEnable;
 					reg2_re = `ReadDisable;
 					reg1_addr =	inst_reg1_addr;
 					reg2_addr = inst_reg2_addr;

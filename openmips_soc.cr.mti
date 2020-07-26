@@ -92,13 +92,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ex
 
-} {} {}} D:/MIPS_CPU/regfile.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/regfile.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module regfile
-
-Top level modules:
-	regfile
-
 } {} {}} D:/MIPS_CPU/openmips_soc.v {1 {vlog -work work -vopt -stats=none D:/MIPS_CPU/openmips_soc.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module pc_reg

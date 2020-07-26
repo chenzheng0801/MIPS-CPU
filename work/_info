@@ -9,125 +9,125 @@ z2
 cModel Technology
 dD:/modeltech64_10.4/examples
 T_opt
-!s110 1593021457
-VdI6:Rh0mXaRWY5GV;=IKh1
+!s110 1595736425
+VS@[CRMDD:cRn;bR5X0Y140
 04 15 4 work openmips_soc_tb fast 0
-=1-ace2d34b16f2-5ef39410-320-1ee4
+=1-ace2d34b16f2-5f1d0169-af-6a4
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt
 OL;O;10.4;61
 vex
-Z0 !s110 1593021426
+!s110 1595727532
 !i10b 1
-!s100 ;7bC7TVN0ic?BW4CDNQo:0
-I;Med2U7FnUgbUVXCL@TIR2
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dD:/MIPS_CPU
-w1590860538
-8ex.v
-Fex.v
+!s100 7iD2@LNBbU:R<RU9@SGYj0
+IcFm^_O=M3MEFL;<7b4Sn`1
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dD:/MIPS_CPU
+w1594740725
+8D:/MIPS_CPU/ex.v
+FD:/MIPS_CPU/ex.v
 L0 7
-Z3 OL;L;10.4;61
+Z2 OL;L;10.4;61
 r1
 !s85 0
 31
-Z4 !s108 1593021425.629000
-Z5 !s107 mem_wb.v|mem.v|ex_mem.v|ex.v|id_ex.v|regfile.v|id.v|if_id.v|pc_reg.v|define.v|D:/MIPS_CPU/openmips.v|
-Z6 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/openmips.v|
+!s108 1595727532.233000
+!s107 define.v|D:/MIPS_CPU/ex.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/ex.v|
 !i113 0
-Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vex_mem
-R0
+Z4 !s110 1593021426
 !i10b 1
 !s100 <_E8H>Hm13XlV6zRDhcDl2
 Ien9PbilY^oFQ;E[Vh75ge2
+R0
 R1
-R2
 w1590081124
 8ex_mem.v
 Fex_mem.v
 L0 7
-R3
+R2
 r1
 !s85 0
 31
-R4
-R5
-R6
+Z5 !s108 1593021425.629000
+Z6 !s107 mem_wb.v|mem.v|ex_mem.v|ex.v|id_ex.v|regfile.v|id.v|if_id.v|pc_reg.v|define.v|D:/MIPS_CPU/openmips.v|
+Z7 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/openmips.v|
 !i113 0
-R7
+R3
 vid
-Z8 !s110 1593021429
+!s110 1595735895
 !i10b 1
-!s100 [Zi@H_[1:fJ<Bjco5f5`W1
-IVUiQ9@8cB2ZRE=UK=Qnbh3
+!s100 R]]VJAnXW@=<3J`bWJmJA2
+I1?aOf5gFOLPdRTgaG5gOf3
+R0
 R1
-R2
-w1592727974
+w1595735642
 8D:/MIPS_CPU/id.v
 FD:/MIPS_CPU/id.v
-L0 14
-R3
+Z8 L0 17
+R2
 r1
 !s85 0
 31
-!s108 1593021429.631000
+!s108 1595735895.051000
 !s107 define.v|D:/MIPS_CPU/id.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/id.v|
 !i113 0
-R7
+R3
 vid_ex
-R0
+R4
 !i10b 1
 !s100 ?F_E<B^khXl95Z7o2<;iD2
 I271W;FhO:[ZzD1@MD5_bz1
+R0
 R1
-R2
 w1590074634
 8id_ex.v
 Fid_ex.v
 L0 7
-R3
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vif_id
-R0
+R4
 !i10b 1
 !s100 dN1IYL24ai`dI99zS3j0K3
 IZc?blH8g_15Jk`1>GcRC92
+R0
 R1
-R2
 w1589120915
 8if_id.v
 Fif_id.v
 L0 7
-R3
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vinst_rom
 Z9 !s110 1590890566
 !i10b 1
 !s100 eNknUG:f7^JNze5H^hm_=2
 IEfZbJ1jYc1WUe5EeDaaU]1
+R0
 R1
-R2
 w1590592732
 8inst_rom.v
 Finst_rom.v
 L0 9
-R3
+R2
 r1
 !s85 0
 31
@@ -135,79 +135,79 @@ Z10 !s108 1590890566.292000
 Z11 !s107 inst_rom.v|mem_wb.v|mem.v|ex_mem.v|ex.v|id_ex.v|regfile.v|id.v|if_id.v|pc_reg.v|openmips.v|openmips_soc.v|define.v|D:/MIPS_CPU/openmips_soc_tb.v|
 Z12 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/openmips_soc_tb.v|
 !i113 0
-R7
+R3
 vmem
-R0
+R4
 !i10b 1
 !s100 4ZO<J<Yo9SkD5l]O:@8B13
 ILfh1SX^gVPTzKFD66^[[;0
+R0
 R1
-R2
 w1590082185
 8mem.v
 Fmem.v
 L0 6
-R3
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vmem_wb
-R0
+R4
 !i10b 1
 !s100 bB5Klm4K;35YPW65_W=RS2
 IoHC6?;CT0@`]nAIFQz82]1
+R0
 R1
-R2
 w1590163439
 8mem_wb.v
 Fmem_wb.v
 L0 7
-R3
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vopenmips
-R0
+R4
 !i10b 1
 !s100 =Zh4AFCkh8f`:C7m_?6AH0
 IUm<@Ta<[ozlR`n`Tz]]8m3
+R0
 R1
-R2
 w1592729177
 8D:/MIPS_CPU/openmips.v
 FD:/MIPS_CPU/openmips.v
-L0 17
-R3
+R8
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vopenmips_soc
 R9
 !i10b 1
 !s100 TWcF^6me4TB2a@DeiTNfE1
 I@;zfeRATHS7FdA?nz=Wba0
+R0
 R1
-R2
 w1590511257
 8openmips_soc.v
 Fopenmips_soc.v
 L0 10
-R3
+R2
 r1
 !s85 0
 31
@@ -215,19 +215,19 @@ R10
 R11
 R12
 !i113 0
-R7
+R3
 vopenmips_soc_tb
 R9
 !i10b 1
 !s100 2<c9z:d@7Qi;<CBRehW6W2
 ImmeAJ`XZN8VKQ^iz?UFg>3
+R0
 R1
-R2
 w1590890526
 8D:/MIPS_CPU/openmips_soc_tb.v
 FD:/MIPS_CPU/openmips_soc_tb.v
 L0 5
-R3
+R2
 r1
 !s85 0
 31
@@ -235,44 +235,44 @@ R10
 R11
 R12
 !i113 0
-R7
+R3
 vpc_reg
-R0
+R4
 !i10b 1
 !s100 8lf4WYf9AgH;Q<I7;`^bL0
 ILOHb=T>@3Da[1Q1`YnKSl0
+R0
 R1
-R2
 w1590848489
 8pc_reg.v
 Fpc_reg.v
 L0 3
-R3
+R2
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R3
 vregfile
-R8
+!s110 1595736416
 !i10b 1
-!s100 I^bHZRJ`n>S=M9nnlaOBZ3
-Ii9BYSc6TQXmMa4dYHAD6S1
+!s100 <T04K?e4>HZdIa<iYRioT2
+IDW9EHKgjl<9N`PjWWcdO^0
+R0
 R1
-R2
-w1590898444
+w1595736322
 8D:/MIPS_CPU/regfile.v
 FD:/MIPS_CPU/regfile.v
 L0 8
-R3
+R2
 r1
 !s85 0
 31
-!s108 1593021429.916000
+!s108 1595736416.801000
 !s107 define.v|D:/MIPS_CPU/regfile.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/MIPS_CPU/regfile.v|
 !i113 0
-R7
+R3

@@ -69,7 +69,7 @@ module regfile(
 		else if(re2 == `ReadEnable && we == `WriteEnable && waddr == raddr2)
 			rdata2 = wdata;
 		else if(re2 == `ReadEnable )
-			rdata2 = regs[raddr1];
+			rdata2 = regs[raddr2];
 		else
 			rdata2 = `ZeroWord;
 	end	
